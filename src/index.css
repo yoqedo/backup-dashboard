@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  -webkit-app-region: drag;
+  backdrop-filter: blur(50px);
+  background: rgba(85, 85, 85, 0.2);
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+}
