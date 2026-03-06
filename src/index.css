@@ -10,3 +10,70 @@ body,
   margin: 0;
   padding: 0;
 }
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Button beim scannen bekommt eine animation (spinner) */
+.start-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner-and-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.start-button.is-scanning {
+  opacity: 0.8;
+  cursor: default;
+}
+
+/* Glow beim scannen der Daten */
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: rgba(255, 255, 255, 0.25);
+  animation: fillProgress 3s linear forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Ende Scan Button */
